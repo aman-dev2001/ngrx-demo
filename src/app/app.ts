@@ -5,11 +5,12 @@ import { decrement, increment, reset } from './store/counter.actions';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { counterFeature } from './store/counter.feature';
+import { Form } from './form/form';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, Form],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
