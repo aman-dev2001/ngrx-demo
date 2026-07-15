@@ -1,21 +1,55 @@
-<div class="min-h-screen bg-gray-950 text-white flex items-center justify-center px-6">
-  <div class="w-full max-w-3xl rounded-2xl border border-gray-800 bg-gray-900 p-10 shadow-2xl">
-    <h1 class="text-5xl font-bold tracking-tight">
-      🚀 NgRx Learning
-    </h1>
+<div class="min-h-screen bg-gray-950 flex items-center justify-center px-6">
+  <div
+    class="w-full max-w-xl rounded-3xl border border-gray-800 bg-gray-900 shadow-2xl p-10">
 
-    <p class="mt-4 text-lg text-gray-400 leading-8">
-      Master Angular state management with
-      <span class="font-semibold text-sky-400">Store</span>,
-      <span class="font-semibold text-emerald-400">Actions</span>,
-      <span class="font-semibold text-violet-400">Reducers</span>,
-      <span class="font-semibold text-amber-400">Effects</span>,
-      <span class="font-semibold text-pink-400">Selectors</span>,
-      and
-      <span class="font-semibold text-cyan-400">Entity</span>.
-    </p>
-    <div class="mt-10 border-t border-gray-800 pt-8">
+    <!-- Header -->
+    <div class="text-center">
+      <h1 class="text-4xl font-bold text-white">
+        🚀 NgRx Counter App
+      </h1>
+
+      <p class="mt-2 text-gray-400">
+        State Management using NgRx Store
+      </p>
+    </div>
+
+    <!-- Counter -->
+    <div class="my-10 flex justify-center">
+      <div
+        class="h-40 w-40 rounded-full border-4 border-sky-500 bg-gray-950 flex items-center justify-center shadow-lg">
+        <span class="text-6xl font-extrabold text-sky-400">
+          {{ counter$ | async }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="grid grid-cols-3 gap-4">
+
+      <button
+        (click)="inc()"
+        class="rounded-xl bg-sky-500 py-3 font-semibold text-white transition hover:bg-sky-600 active:scale-95">
+        ➕ Increment
+      </button>
+
+      <button
+        (click)="dec()"
+        class="rounded-xl bg-rose-500 py-3 font-semibold text-white transition hover:bg-rose-600 active:scale-95">
+        ➖ Decrement
+      </button>
+
+      <button
+        (click)="reset()"
+        class="rounded-xl bg-gray-700 py-3 font-semibold text-white transition hover:bg-gray-600 active:scale-95">
+        🔄 Reset
+      </button>
+
+    </div>
+
+    <!-- Router -->
+    <div class="mt-10 border-t border-gray-800 pt-6">
       <router-outlet />
     </div>
+
   </div>
 </div>
