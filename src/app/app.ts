@@ -4,7 +4,7 @@ import { select, Store } from "@ngrx/store";
 import { decrement, increment, reset } from './store/counter.actions';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { AppState, selectCounter } from './store/counter.selectors';
+import { counterFeature } from './store/counter.feature';
 
 
 @Component({
@@ -15,8 +15,8 @@ import { AppState, selectCounter } from './store/counter.selectors';
 })
 export class App {
   counter$!: Observable<number>;
-  constructor(private Store: Store<AppState>) {
-    this.counter$ = this.Store.select(selectCounter);
+  constructor(private Store:Store) {
+    this.counter$ = this.Store.select(counterFeature.selectCounterState);
   }
 
   inc() {
